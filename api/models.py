@@ -20,7 +20,13 @@ class User_profile(models.Model):
         return self.name
 
 class Payment_user(models.Model):
-    test = models.CharField(max_length=10, null=False)
+    User_model = models.OneToOneField(User_model, on_delete=models.CASCADE)
+    grade = models.IntegerField(default=0) # 0, 1, 2, 3 구분
+    Revenue = models.FloatField(default=0)
 
     def __str__(self):
         return self.test
+
+
+class Sales_Department(models.Model):
+    앵
